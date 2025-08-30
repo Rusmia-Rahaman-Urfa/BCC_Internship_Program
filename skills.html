@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Here are my skills</title>
+    <style>
+        /* Reset styles - copying from my other page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        /* Navigation - keeping consistent with main page */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 900px; /* slightly wider for skills grid */
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        /* Card styling */
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .card-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .card-header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 3rem 2rem; /* extra padding for skills section */
+        }
+        
+        /* Skills grid - tried CSS Grid first but flexbox felt easier */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Skill buttons - spent too much time making these look nice */
+        .skill-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px; /* very rounded, maybe too much? */
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* fancy easing */
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+            min-width: 120px; /* ensuring consistent button sizes */
+        }
+        
+        /* Hover effect - probably overdid this but looks cool */
+        .skill-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+        }
+        
+        .skill-btn:active {
+            transform: translateY(-1px) scale(1.02); /* subtle press effect */
+        }
+        
+        /* Adding a subtle animation on load - because why not */
+        .skill-btn {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .skill-btn:nth-child(1) { animation-delay: 0.1s; }
+        .skill-btn:nth-child(2) { animation-delay: 0.2s; }
+        .skill-btn:nth-child(3) { animation-delay: 0.3s; }
+        .skill-btn:nth-child(4) { animation-delay: 0.4s; }
+        .skill-btn:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0 0.5rem;
+            }
+            
+            .card-header h1 {
+                font-size: 2rem;
+            }
+            
+            .card-body {
+                padding: 2rem 1.5rem;
+            }
+            
+            .skills-grid {
+                gap: 0.8rem; /* tighter spacing on mobile */
+            }
+            
+            .skill-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                min-width: 100px;
+            }
+            
+            .navbar nav {
+                gap: 1rem;
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .skill-btn {
+                flex: 1 1 calc(50% - 0.5rem); /* two columns on very small screens */
+                max-width: calc(50% - 0.5rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a> <!-- this should be the active page -->
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <div class="card-header">
+                <h1>Here are my skills</h1>
+            </div>
+            <div class="card-body">
+                <div class="skills-grid">
+                    <button class="skill-btn">HTML5</button>
+                    <button class="skill-btn">CSS3</button>
+                    <button class="skill-btn">JavaScript</button>
+                    <button class="skill-btn">Node-js</button>
+                    <button class="skill-btn">MySql</button>
+                    <!-- TODO: add more skills as I learn them -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Adding some interactivity because buttons should do something, right?
+        document.querySelectorAll('.skill-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Simple feedback - maybe add skill details later
+                const skill = this.textContent;
+                alert(`You clicked on ${skill}! More details coming soon...`);
+                
+                // Adding a little bounce effect on click
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'bounce 0.5s ease';
+                }, 10);
+            });
+        });
+        
+        // Define bounce animation dynamically - probably unnecessary but whatever
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 20%, 60%, 100% { transform: translateY(0); }
+                40% { transform: translateY(-10px); }
+                80% { transform: translateY(-5px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

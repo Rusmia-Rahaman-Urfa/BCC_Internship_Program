@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urfa's-portfolio</title>
+    <style>
+        /* Basic reset - always forget if I need this but better safe than sorry */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif; /* TODO: maybe switch to a nicer font later */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        /* Navigation styles */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100; /* making sure nav stays on top */
+        }
+        
+        .navbar nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem; /* I like using gap instead of margins between items */
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px); /* subtle hover effect I learned recently */
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        /* Card styling - spent way too much time on this shadow */
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .card-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .card-header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+        
+        /* Profile photo styling - using placeholder since original image path won't work */
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: linear-gradient(45deg, #667eea, #764ba2); /* fallback for missing image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .profile-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            color: #555;
+        }
+        
+        /* Responsive design - mobile first approach */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0 0.5rem;
+            }
+            
+            .card-header h1 {
+                font-size: 2rem; /* smaller heading on mobile */
+            }
+            
+            .card-body {
+                padding: 1.5rem;
+            }
+            
+            .navbar nav {
+                gap: 1rem; /* less spacing on mobile */
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px; /* smaller photo on mobile screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <!-- Note: these would normally link to other pages but keeping them as-is -->
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <div class="card-header">
+                <h1>Hello !  I am Rusmia Rahaman Urfa</h1>
+            </div>
+            <div class="card-body">
+                <article class="profile-section">
+                    <!-- Using a placeholder div since the original image path won't work -->
+                    
+                    <p>I am much passionate to explore my Problem Solving skills through Leet Code. Recently I am interested to get a deep drive into the Backend System of the software. That's why I am trying to learn core JavaScript consistently.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
